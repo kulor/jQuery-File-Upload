@@ -1,0 +1,43 @@
+{
+    "name": "blueimp-file-upload-node-express",
+    "version": "0.0.1",
+    "title": "jQuery File Upload Node.js express example",
+    "description": "Express Node.js implementation example of a file upload handler for jQuery File Upload. Making it easier to know how to add the server code into an existing express application",
+    "keywords": [
+        "file",
+        "upload",
+        "cross-domain",
+        "cross-site",
+        "node",
+        "express"
+    ],
+    "homepage": "https://github.com/kulor/jQuery-File-Upload",
+    "author": {
+        "name": "James Broad",
+        "url": "https://kulor.com"
+    },
+    "maintainers": [
+        {
+            "name": "Sebastian Tschan",
+            "url": "https://blueimp.net"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kulor/jQuery-File-Upload.git"
+    },
+    "bugs": "https://github.com/kulor/jQuery-File-Upload/issues",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
+        }
+    ],
+    "dependencies": {
+        "formidable": ">=1.0.8",
+        "node-static": ">=0.5.9",
+        "imagemagick": ">=0.1.2",
+        "express": ">=3.0.0rc3"
+    },
+    "main": "server.js"
+}
