@@ -48,29 +48,7 @@ app.configure(function(){
 
 var uploadRoutes = require('./lib/upload-routes').configure(app.get('options'));
 
-app.use(function(req, res, next){
-    var options = app.get('options');
-    res.setHeader(
-        'Access-Control-Allow-Origin',
-        options.accessControl.allowOrigin
-    );
-    res.setHeader(
-        'Access-Control-Allow-Methods',
-        options.accessControl.allowMethods
-    );
-    next();
-});
-
-app.use(function(req, res, next){
-    if (req.method === 'OPTIONS') {
-        res.statusCode = 204;
-        res.setHeader('Allow', '');
-        res.end();
-    } else {
-        next();
-    }
-});
-
+app.all('/', uploadRoutes.accessControl, uploadRoutes.options);
 app.get('/', uploadRoutes.get);
 app.post('/', uploadRoutes.post);
 app.delete('/', uploadRoutes.delete);

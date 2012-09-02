@@ -118,6 +118,28 @@ var configure = function(options){
         head: function(req, res){
             setNoCacheHeaders(res);
             res.end();
+        },
+
+        options: function(req, res, next){
+            if (req.method === 'OPTIONS') {
+                res.statusCode = 204;
+                res.setHeader('Allow', '');
+                res.end();
+            } else {
+                next();
+            }
+        },
+
+        accessControl: function(req, res, next){
+            res.setHeader(
+                'Access-Control-Allow-Origin',
+                options.accessControl.allowOrigin
+            );
+            res.setHeader(
+                'Access-Control-Allow-Methods',
+                options.accessControl.allowMethods
+            );
+            next();
         }
     }
 }
