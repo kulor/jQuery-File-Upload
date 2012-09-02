@@ -1,5 +1,5 @@
 {
-    "name": "blueimp-file-upload-node-express",
+    "name": "kulor-file-upload",
     "version": "0.0.1",
     "title": "jQuery File Upload Node.js express example",
     "description": "Express Node.js implementation example of a file upload handler for jQuery File Upload. Making it easier to know how to add the server code into an existing express application",
