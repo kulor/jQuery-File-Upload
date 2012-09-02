@@ -4,8 +4,7 @@ var fs = require('fs'),
     path = require('path');
 
 var configure = function(options){
-    var fileServer = require('./file-server').fileServer(options),
-        FileInfo = require('./file-info').FileInfo(options),
+    var FileInfo = require('./file-info').FileInfo(options),
         setNoCacheHeaders = function (res) {
             res.setHeader('Pragma', 'no-cache');
             res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
@@ -65,7 +64,6 @@ var configure = function(options){
                 files.push(fileInfo);
             }).on('field', function (name, value) {
                 if (name === 'redirect') {
-                    console.log(value);
                     res.redirect(value);
                 }
             }).on('file', function (name, file) {
